@@ -3,7 +3,7 @@ import axios from 'axios';
 import './AuthPage.css';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, color, motion } from 'framer-motion';
-const backendurl = Process.env.url;
+const backendurl = process.env.url;
 
 export default function AuthPage() {
   const navigate = useNavigate();
