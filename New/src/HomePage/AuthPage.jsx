@@ -3,6 +3,7 @@ import axios from 'axios';
 import './AuthPage.css';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, color, motion } from 'framer-motion';
+const backendurl = Process.env.url;
 
 export default function AuthPage() {
   const navigate = useNavigate();
@@ -27,8 +28,8 @@ export default function AuthPage() {
     // Remove default appointments, prescriptions, and history for patient registration
   
     const url = isLogin
-      ? 'http://localhost:5000/api/login'
-      : 'http://localhost:5000/api/register';
+  ? `${backendurl}/api/login`
+  : `${backendurl}/api/register`;
   
     try {
       const { data } = await axios.post(url, submitData);
